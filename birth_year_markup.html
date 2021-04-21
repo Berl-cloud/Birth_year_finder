@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Year</title>
+</head>
+<body style="background-color: coral;">
+    <div style ="margin-left: 480px; font-size: 40px; padding-top: 50px; color: white;">Find your date of birth</div>
+
+    
+        <form style="margin-top: 100px; margin-left: 450px; padding-bottom: 50px;">
+            
+            <table >
+
+            <tr><td><input style="height: 30px; width:400px; padding-left:16px" placeholder= " Type your age..." 
+            type="number" name ="number" id="number"/></td></tr>
+            
+            <tr><td><input style="height: 30px; width:400px; padding-left:16px" placeholder= " Type your day of birth..." 
+            type="number" name="num" id="num"/></td></tr>
+
+            <tr><td><input style="height: 30px; width:400px; padding-left:16px" placeholder= " Type your month of birth..." 
+            type="text" name="text" id="text" /></td></tr>
+            
+            <tr><td style="color: white; padding-left: 5px; height: 30px; width:400px"> Today's date </td></tr>
+
+            <tr><td><input style="height: 30px; width:400px; padding-left:16px" 
+                type="date" name="date" id="date" /></td></tr>
+
+            <tr><td><input style="height: 35px;" type="button" value ="Find Year" id="button"/></td></tr>
+
+            <p style ="margin-left: 200px; color: white;  font-size: 20px;" id="year">Year</p>
+            </table>
+        </form>
+
+
+ <script type="text/javascript">
+
+     function calculate() {
+
+        var number = document.getElementById("number").value;
+        var date = document.getElementById("date").value;
+        var num = document.getElementById("num").value;
+        var text = document.getElementById("text").value;
+        if (number == "" || number == 0 ) {
+            
+            window.alert("Please type your correct age!"); 
+            return;
+
+        }
+        var date= new Date().getFullYear();
+        var birthyear = date - number;
+
+        document.getElementById("year").style.display="block";
+        document.getElementById("year").style.color;
+        document.getElementById("year").style.marginLeft="55px";
+        document.getElementById("year").innerHTML = "Your Date of Birth is " + num + " " + text +" "+ birthyear + " as at "+ date ;
+    
+    }
+
+
+    
+      
+
+
+      document.getElementById("year").style.display="none";
+      document.getElementById("button").onclick = function()  {    calculate();    };
+
+
+
+
+</script>
+
+    
+</body>
+</html>
